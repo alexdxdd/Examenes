@@ -1,0 +1,61 @@
+---
+title: "Análisis de datos de calificaciones"
+author: "Alex Fernández"
+format: html
+toc: true
+lang: es
+---
+
+
+Fuente de los datos:
+[Kaggle - Students Performance in Exams](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams)
+
+
+## Carga de datos
+
+```{r}
+#| label: carga-datos
+
+datos <- read.csv("StudentsPerformance.csv")
+```
+
+## Muestra de datos:
+```{r}
+#| label: muestra-datos
+
+head(datos[, c("gender", "race.ethnicity", "math.score")])
+```
+
+## Análisis
+
+### Relación entre el rendimiento en lectura y en escritura
+
+```{r}
+#| label: relación-lectura
+#| code-fold: true
+
+plot(
+  x = datos$reading.score,
+  y = datos$writing.score,
+  xlab = "Rendimiento en lectura",
+  ylab = "Rendimiento en escritura",
+  pch = 19, col = "slateblue"
+)
+```
+
+El gráfico muestra que el rendimiento en escritura aumenta conforme aumente el rendimiento en lectura
+
+### Relación entre el rendimiento en lectura y en matemáticas
+
+```{r}
+#| label: relación-lectura-matematicas
+#| code-fold: true
+
+plot(
+  x = datos$reading.score,
+  y = datos$math.score,
+  xlab = "Rendimiento en lectura",
+  ylab = "Rendimiento en escritura",
+  pch = 19, col = "skyblue"
+)
+```
