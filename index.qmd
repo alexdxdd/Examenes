@@ -59,3 +59,18 @@ plot(
   pch = 19, col = "skyblue"
 )
 ```
+
+### Relación entre el rendimiento en escritura y en matemáticas
+
+```{r}
+#| label: relación-escritura-matematicas
+#| code-fold: true
+
+plot(
+  x = datos$writing.score,
+  y = datos$math.score,
+  xlab = "Rendimiento en lectura",
+  ylab = "Rendimiento en escritura",
+  pch = 19, col = "darkblue"
+)
+```
